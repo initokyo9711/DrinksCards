@@ -4,7 +4,7 @@
     "type": "module",
     "scripts": {
         "vite-build": "vite build",
-        "vercel-build": "npm run vite-build && composer install --no-dev",
+        "vercel-build": "npm run vite-build && composer install --no-dev && php artisan config:clear && php artisan cache:clear",
         "dev": "vite"
     },
     "devDependencies": {

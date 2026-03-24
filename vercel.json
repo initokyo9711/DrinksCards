@@ -10,13 +10,11 @@
         }
     },
     "env": {
-        "SESSION_DRIVER": "file",
-        "SESSION_PATH": "/tmp/sessions",
-        "CACHE_STORE": "file",
-        "APP_CONFIG_CACHE": "/tmp/cache/config.php",
-        "APP_EVENTS_CACHE": "/tmp/cache/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/cache/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/cache/routes.php",
+        "APP_ENV": "production",
+        "APP_DEBUG": "false",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie",
+        "CACHE_STORE": "array",
         "VIEW_COMPILED_PATH": "/tmp/views"
     },
     "routes": [
