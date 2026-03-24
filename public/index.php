@@ -10,6 +10,12 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
     require $maintenance;
 }
 
+// Sync directories for Vercel
+$tmpDirs = ['/tmp/views', '/tmp/sessions', '/tmp/cache'];
+foreach ($tmpDirs as $dir) {
+    if (!is_dir($dir)) @mkdir($dir, 0777, true);
+}
+
 // Register the Composer autoloader...
 require __DIR__.'/../vendor/autoload.php';
 

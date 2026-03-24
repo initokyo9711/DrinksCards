@@ -1,12 +1,11 @@
 {
     "version": 2,
-    "framework": null,
+    "framework": "other",
     "functions": {
-        "api/index.php": {
+        "public/index.php": {
             "runtime": "vercel-php@0.7.1"
         }
     },
-    "buildCommand": "npm install && npm run vite-build && (if [ -f composer.json ]; then curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev; fi)",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
@@ -18,23 +17,23 @@
     "routes": [
         {
             "src": "/build/(.*)",
-            "dest": "public/build/$1"
+            "dest": "/public/build/$1"
         },
         {
             "src": "/(css|js|images|fonts|build)/(.*)",
-            "dest": "public/$1/$2"
+            "dest": "/public/$1/$2"
         },
         {
             "src": "/favicon.ico",
-            "dest": "public/favicon.ico"
+            "dest": "/public/favicon.ico"
         },
         {
             "src": "/DrinksCardDesign.png",
-            "dest": "public/DrinksCardDesign.png"
+            "dest": "/public/DrinksCardDesign.png"
         },
         {
             "src": "/(.*)",
-            "dest": "api/index.php"
+            "dest": "public/index.php"
         }
     ]
 }
