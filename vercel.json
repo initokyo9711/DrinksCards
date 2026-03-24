@@ -4,6 +4,9 @@
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.1"
+        },
+        "api/test.php": {
+            "runtime": "vercel-php@0.7.1"
         }
     },
     "env": {
@@ -20,20 +23,24 @@
     },
     "routes": [
         {
+            "src": "/test",
+            "dest": "api/test.php"
+        },
+        {
             "src": "/build/(.*)",
-            "dest": "/public/build/$1"
+            "dest": "public/build/$1"
         },
         {
             "src": "/(css|js|images|fonts|build)/(.*)",
-            "dest": "/public/$1/$2"
+            "dest": "public/$1/$2"
         },
         {
             "src": "/favicon.ico",
-            "dest": "/public/favicon.ico"
+            "dest": "public/favicon.ico"
         },
         {
             "src": "/DrinksCardDesign.png",
-            "dest": "/public/DrinksCardDesign.png"
+            "dest": "public/DrinksCardDesign.png"
         },
         {
             "src": "/(.*)",
